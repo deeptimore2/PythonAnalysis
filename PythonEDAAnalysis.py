@@ -3,11 +3,12 @@ import pandas as pd
 import numpy as np
 
 print("----------------------------------------------------------------------------------------")
-print("\t\t Basic Analysis with graphs of WOWOCommerce Product Data\t\t")
+print("\t\t Python Analysis with graphs of WOWOCommerce Product Data\t\t")
 print("---------------------------------------------------------------------------------------")
 
 # 1.Read CSV File
 df = pd.read_csv("./data/woocommerce-product-export.csv")
+print(df.head)
 
 # 2.Show a concise summary of the columns.
 print(df.info())
@@ -29,11 +30,12 @@ plt.ylabel("Total profit")
 plt.title("Company profit per month")
 plt.yticks(range(0,600000,100000))
 plt.grid(linestyle="--")
+plt.tight_layout()
 plt.show()
 
 #8.Read the total profit of all of the months, and show the line plot with the following style properties:
 # Create a plot style dictionary
-plt.figsize=(20,10)
+#plt.figsize=(20,10)
 plot_style = {
     "linestyle": "--",
     "color" : "red",
@@ -50,6 +52,7 @@ plt.plot(df["month_number"], df["total_profit"], **plot_style)
 plt.xticks(df["month_number"])
 plt.yticks(range(0,600000,100000))
 plt.legend(loc="lower right")
+plt.tight_layout()
 plt.show()
 
 # 9.Print all of the product sales data and show it using a multi-line plot.
@@ -65,6 +68,7 @@ plt.title("Sales Data")
 plt.xlabel("Month Number")
 plt.ylabel("Sales units in Number")
 plt.legend()
+plt.tight_layout()
 plt.show()
 
 # 10.Read “bathingsoap” sales data for each month and show it using a scatter plot
@@ -76,6 +80,7 @@ plt.title("Bathing Soap Sales Data")
 plt.xlabel("Month Number")
 plt.ylabel("Number of units Sold")
 plt.legend()
+plt.tight_layout()
 plt.show()
 
 print("----------------------------------------------------------------------------------------")
@@ -98,6 +103,7 @@ plt.plot(date,temp)
 plt.xlabel("Date")
 plt.ylabel("temperature")
 plt.title("Date-wise Temperature")
+plt.tight_layout()
 plt.show()
 
 #2.Create a line or any chart using following dataset
@@ -128,7 +134,8 @@ pStyle={
 }
 plt.plot(weight,height,**pStyle)
 plt.title("Average weight with respect to average height.")
-plt.xlabel("Weight in Kg")
+plt.xlabel("Weight in kg")
 plt.ylabel("Height in cm")
 plt.legend(loc="lower right")
+plt.tight_layout()
 plt.show()
